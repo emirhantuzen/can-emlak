@@ -1,5 +1,5 @@
-### 3. `script.js`
 ```javascript
+// İlanları yükle
 fetch('ilanlar.json')
   .then(response => response.json())
   .then(data => {
@@ -21,3 +21,15 @@ fetch('ilanlar.json')
     });
   })
   .catch(error => console.error('İlanlar yüklenemedi:', error));
+
+// Hero Slider
+let currentSlide = 0;
+const slides = document.querySelectorAll('.hero-slider .slide');
+
+function changeSlide() {
+  slides[currentSlide].classList.remove('active');
+  currentSlide = (currentSlide + 1) % slides.length;
+  slides[currentSlide].classList.add('active');
+}
+
+setInterval(changeSlide, 5000); // 5 saniyede bir kaydır
