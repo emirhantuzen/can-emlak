@@ -9,7 +9,7 @@ body {
 header {
   position: sticky;
   top: 0;
-  background: #00000;
+  background: #fff;
   border-bottom: 1px solid #eee;
   display: flex;
   justify-content: space-between;
