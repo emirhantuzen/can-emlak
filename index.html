@@ -1,1 +1,169 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Can Emlak</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Can Emlak</h1>
+    <nav>
+      <a href="#hakkimizda">Hakkımızda</a>
+      <a href="#hizmetler">Hizmetler</a>
+      <a href="#ilanlar">İlanlar</a>
+      <a href="#iletisim">İletişim</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Hayalinizdeki Evi Bizimle Bulun</h2>
+  </section>
+
+  <section id="ilanlar" class="section">
+    <h2>Öne Çıkan İlanlar</h2>
+    <div class="properties" id="properties"></div>
+  </section>
+
+  <section id="hakkimizda" class="section">
+    <h2>Hakkımızda</h2>
+    <p>Can Emlak, yılların deneyimi ile müşterilerine güvenilir, şeffaf ve profesyonel emlak danışmanlığı sunar. Amacımız, hayallerinizdeki evi ya da yatırım fırsatını sizin için bulmak.</p>
+  </section>
+
+  <section id="hizmetler" class="section">
+    <h2>Hizmetlerimiz</h2>
+    <ul>
+      <li>Satılık & Kiralık Konutlar</li>
+      <li>Ticari Gayrimenkuller</li>
+      <li>Yatırım Danışmanlığı</li>
+      <li>Satış ve Pazarlama Desteği</li>
+    </ul>
+  </section>
+
+  <section id="iletisim" class="section">
+    <h2>İletişim</h2>
+    <p>Bize ulaşın: <br>Email: info@canemlak.com<br>Telefon: +90 555 123 45 67</p>
+    <p>Ofis: İstanbul, Türkiye</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Can Emlak. Tüm Hakları Saklıdır.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+```
+
+---
+
+### 2. `style.css`
+```css
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  color: #1E1E1E;
+  background-color: #fff;
+}
+header {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  z-index: 100;
+}
+header h1 {
+  margin: 0;
+  color: #C7A76C;
+}
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #1E1E1E;
+  font-weight: 500;
+}
+.hero {
+  height: 90vh;
+  background: url('https://source.unsplash.com/1600x900/?luxury-house') center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+}
+.hero h2 {
+  font-size: 3rem;
+  background: rgba(0,0,0,0.5);
+  padding: 1rem 2rem;
+  border-radius: 10px;
+}
+.section {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+.properties {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+.property {
+  border: 1px solid #eee;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+.property:hover {
+  transform: translateY(-5px);
+}
+.property img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.property .info {
+  padding: 1rem;
+}
+footer {
+  background: #1E1E1E;
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 3rem;
+}
+```
+
+---
+
+### 3. `script.js`
+```javascript
+fetch('ilanlar.json')
+  .then(response => response.json())
+  .then(data => {
+    const container = document.getElementById('properties');
+
+    data.forEach(item => {
+      const card = document.createElement('div');
+      card.classList.add('property');
+
+      card.innerHTML = `
+        <img src="${item.resim}" alt="${item.baslik}">
+        <div class="info">
+          <h3>${item.baslik}</h3>
+          <p>${item.konum} - ${item.fiyat}</p>
+        </div>
+      `;
+
+      container.appendChild(card);
+    });
+  })
+  .catch(error => console.error('İlanlar yüklenemedi:', error));
+```
 
