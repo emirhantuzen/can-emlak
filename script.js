@@ -1,3 +1,4 @@
+### 3. `script.js`
 ```javascript
 // İlanları yükle
 fetch('ilanlar.json')
