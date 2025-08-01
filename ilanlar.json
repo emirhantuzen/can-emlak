@@ -1,0 +1,40 @@
+### 4. `ilanlar.json`
+```json
+[
+  {
+    "baslik": "Lüks Villa",
+    "konum": "Beykoz, İstanbul",
+    "fiyat": "25.000.000 TL",
+    "resim": "https://source.unsplash.com/600x400/?villa"
+  },
+  {
+    "baslik": "Deniz Manzaralı Daire",
+    "konum": "Kadıköy, İstanbul",
+    "fiyat": "12.500.000 TL",
+    "resim": "https://source.unsplash.com/600x400/?apartment"
+  },
+  {
+    "baslik": "Şehir Merkezi Ofis",
+    "konum": "Şişli, İstanbul",
+    "fiyat": "8.000.000 TL",
+    "resim": "https://source.unsplash.com/600x400/?office"
+  },
+  {
+    "baslik": "Yazlık Ev",
+    "konum": "Bodrum, Muğla",
+    "fiyat": "15.000.000 TL",
+    "resim": "https://source.unsplash.com/600x400/?beach-house"
+  },
+  {
+    "baslik": "Modern Loft",
+    "konum": "Nişantaşı, İstanbul",
+    "fiyat": "10.500.000 TL",
+    "resim": "https://source.unsplash.com/600x400/?loft"
+  },
+  {
+    "baslik": "Satılık Arsa",
+    "konum": "Çeşme, İzmir",
+    "fiyat": "6.000.000 TL",
+    "resim": "https://source.unsplash.com/600x400/?land"
+  }
+]
